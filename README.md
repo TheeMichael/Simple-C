@@ -13,7 +13,7 @@ Simple Template for building C programs
     ```
     or just download the zip from the repo webpage
 
-2. Sever prpject from repo
+2. Sever project from repo
     ```
     ./sever -a
     ```
