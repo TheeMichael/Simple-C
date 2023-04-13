@@ -2,7 +2,7 @@
 CC          := gcc
 
 #The Target Binary Program
-TARGET      := main
+TARGET      := prog
 
 #The Directories, Source, Includes, Objects, Binary and Resources
 SRCDIR      := src
@@ -49,10 +49,12 @@ clean:
 #Full Clean, Objects and Binaries
 cleaner: clean
 	@$(RM) -rf $(TARGETDIR)
+	@rm $(TARGET)
 
 #Link
 $(TARGET): $(OBJECTS)
 	$(CC) -o $(TARGETDIR)/$(TARGET) $^ $(LIB)
+	@cp $(TARGETDIR)/$(TARGET) ./
 
 #Compile
 $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
