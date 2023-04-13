@@ -1,0 +1,42 @@
+#!/bin/bash
+
+
+#----------------------------------------------------------------------------
+# Checks if script is being run from the same directory
+
+# realpath is apart of GNU coreuitls, not necessarily POSIX
+# A Nice way to get the real path of an executing script (expands symlinks as well)
+
+SCRIPT_PATH="$(dirname "$(realpath -s "$0")")"
+CURRENT_PATH="$(pwd -P)"
+
+if [ $SCRIPT_PATH != $CURRENT_PATH ]; then
+    echo "Please run script from inside the directory that contains it"
+    exit
+fi
+#----------------------------------------------------------------------------
+
+
+if [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "-help" ] || [ -z "$1" ]; then
+    echo "Usage: sever [OPTION]"
+    echo ""
+    echo "Description:"
+    echo "Severs the project from git. Needs explicit arguments to run."
+    echo ""
+    echo "Example:"
+    echo "  sever -a        Severs .git, .gitignore, and the sever file"
+    echo "  sever           Will output the usage/help message"
+    echo ""
+    echo "Arguments:"
+    echo "  -h, --help      Shows this message, exits"
+    echo "  -a, --all       Severs .git, .gitignore, and the sever file"
+    exit
+fi
+
+# -a, --a
+# Severs all git related files and this bash script
+if [ "$1" == "-a" ]; then
+    rm -rf ./.git
+    rm ./.gitignore
+    rm ./sever
+fi
