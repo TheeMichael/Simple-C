@@ -13,9 +13,15 @@ Simple Template for building C programs
     ```
     or just download the zip from the repo webpage
 
+2. Sever prpject from repo
+    ```
+    ./sever -a
+    ```
+    or do it manually
+    ```
+    Delete the ".git" folder to sever the ties to the `Simple-C` git project.
+    Delete the ".gitignore" file as well if so desired.
+    Delete the "sever" script as well
+    ```
 
-2. Delete the `.git` folder to sever the ties to the `Simple-C` git project.
-
-3. Delete the `.gitignore` file as well if so desired.
-
-4. Start programming your hearts content
+3. Start programming to your hearts content
