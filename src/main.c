@@ -3,6 +3,6 @@
 
 int main() {
 
-    printf("Simple C Program Template with Makefile Structure");
+    printf("Simple C Program Template with Makefile Structure\n");
     return 0;
 }
